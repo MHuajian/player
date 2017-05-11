@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DPlayer Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f6f9fa;
+        }
+        .container {
+            max-width: 695px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 54px;
+            color: #333;
+            margin: 30px 0 10px;
+        }
+        h2 {
+            font-size: 22px;
+            color: #555;
+        }
+        h3 {
+            font-size: 24px;
+            color: #555;
+        }
+        hr {
+            display: block;
+            width: 10rem;
+            height: 2px;
+            margin: 2.5rem 0;
+            background-color: #eee;
+            border: 0;
+        }
+        a {
+            color: #08c;
+            text-decoration: none;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+    <link rel="stylesheet" href="./dist/DPlayer.css">
+</head>
+<body>
+<div class="container">
+    <h1>DPlayer</h1>
+    <h2>Wow, such a lovely HTML5 danmaku video player</h2>
+    <p>Made by <a href=" https://mhuajian.github.io/Resume/" target="_blank">MHuaJian</a>. Available on <a href="https://github.com/MHuajian/DPlayer" target="_blank">GitHub</a>. 
+    <hr>
+    <h3>《刚好遇见你MV》 演唱：李玉刚</h3>
+    <div class="dplayer" id="dplayer1"></div>
+</div>
+<script src="./dist/DPlayer.js"></script>
+<script>
+    // Normal
+    var dp = new DPlayer({
+        element: document.getElementById('dplayer1'),
+        autoplay: false,
+        theme: '#FADFA3',
+        loop: true,
+        video: {
+            url: './1.mp4',
+            pic: './1.jpg',
+            type: 'auto',
+        },
+        danmaku: {
+            id: 'danmaku1',
+            api: 'https://api.prprpr.me/dplayer/',
+            maximum: 3000,
+        }
+    });
+</script>
+</body>
+</html>
